@@ -8,8 +8,8 @@ import (
 
 	httptransport "github.com/go-swagger/go-swagger/httpkit/client"
 	strfmt "github.com/go-swagger/go-swagger/strfmt"
-	"github.com/zipkin-api-example/go/client"
-	"github.com/zipkin-api-example/go/client/operations"
+	"github.com/zipkin-api-example/go/swagger"
+	"github.com/zipkin-api-example/go/swagger/operations"
 )
 
 func main() {
