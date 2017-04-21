@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"log"
 
-	httptransport "github.com/go-swagger/go-swagger/httpkit/client"
-	strfmt "github.com/go-swagger/go-swagger/strfmt"
-	client "github.com/openzipkin/zipkin-api-example/go/swagger"
-	"github.com/openzipkin/zipkin-api-example/go/swagger/operations"
+	httptransport "github.com/go-openapi/runtime/client"
+	strfmt "github.com/go-openapi/strfmt"
+	"github.com/openzipkin/zipkin-api-example/go/client"
+	"github.com/openzipkin/zipkin-api-example/go/client/operations"
 )
 
 func main() {
