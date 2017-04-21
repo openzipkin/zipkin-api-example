@@ -8,7 +8,7 @@ import (
 
 	httptransport "github.com/go-swagger/go-swagger/httpkit/client"
 	strfmt "github.com/go-swagger/go-swagger/strfmt"
-	"github.com/zipkin-api-example/go/swagger"
+	client "github.com/zipkin-api-example/go/swagger"
 	"github.com/zipkin-api-example/go/swagger/operations"
 )
 
