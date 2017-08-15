@@ -1,6 +1,6 @@
 ## Swagger
 
-The examples in this directory assume that the zipkin API client has been generated using
+The examples in this directory assume that the [Zipkin API](http://zipkin.io/zipkin-api/#/default/post_spans) client has been generated using
 [go-swagger](https://github.com/go-swagger/go-swagger) into the `client` directory.
 
 ```bash
