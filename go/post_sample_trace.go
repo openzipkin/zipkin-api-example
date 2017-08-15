@@ -22,8 +22,8 @@ func main() {
 	spanID := strconv.FormatUint(id, 16)
 	timestamp := int64(time.Now().UnixNano() / int64(time.Microsecond))
 	span := &models.Span{
-		TraceID:   spanID,
-		ID:        spanID,
+		TraceID:   &spanID,
+		ID:        &spanID,
 		Kind:      models.SpanKindSERVER,
 		Name:      "test",
 		Timestamp: timestamp,
