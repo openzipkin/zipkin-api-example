@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"math/rand"
@@ -41,12 +42,25 @@ func main() {
 		},
 	}
 
-	resp, err := zipkin.Operations.PostSpans(
+	post, postErr := zipkin.Operations.PostSpans(
 		operations.NewPostSpansParams().WithSpans(models.ListOfSpans{span}),
+	)
+
+	if postErr != nil {
+		log.Fatal(postErr)
+	}
+	fmt.Println(string(post.Error()))
+
+	// Storage is Async, so wait a couple secs before reading
+	time.Sleep(time.Second * 2)
+
+	resp, err := zipkin.Operations.GetTraceTraceID(
+		operations.NewGetTraceTraceIDParams().WithTraceID(spanID),
 	)
 
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(string(resp.Error()))
+	payload, _ := json.Marshal(resp.Payload)
+	fmt.Println(string(payload))
 }
